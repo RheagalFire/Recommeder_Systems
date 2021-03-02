@@ -19,7 +19,7 @@
 .form
 {
 	font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
-    color:rgb(214, 218, 13);
+    color:rgb(0, 0, 0);
 	font-weight: normal;
 	line-height: 1.625;
 	margin: 8px auto;
@@ -38,7 +38,7 @@
 #content {
 	background-image: url("../static/image_2.jpg");
     background-blend-mode: lighten;
-	background-color: rgba(255,255,255,0.2);
+	background-color: rgba(255,255,255,0.7);
 	font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -260,4 +260,10 @@ h6 {
 .fail {
 	display: none;
 	color: white;
+}
+.display_R{
+	font-size: 30px;
+	font-family: zillaslab,palatino,"Palatino Linotype",serif;
+	margin-left: auto;
+	margin-right: auto;
 }

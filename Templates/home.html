@@ -8,6 +8,8 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -57,7 +59,25 @@
   <div id="loader" class="text-center">
   </div>
   
-    <center>{{ Results }}</center>
+  
+  {%block content %}
+  {% if ask=="success" %}
+  <div class="display_R">
+    <center><h2 style="color:#062200 ; font-weight: bold;">Suggestions for <h1 style="color:rgb(241, 241, 241);font-family: 'Dancing Script', cursive;font-size: 40px;">{{movie}}</h1></h2></center>
+  </div>
+
+    <ul>
+      {% for m in r %}
+       <center> <li style="color:rgb(0, 0, 0) ;padding-bottom:10px ; font-size: 30px;font-family: 'Dancing Script', cursive;"> <strong> {{m}} </strong> </li> </center>
+      {% endfor %}
+    </ul>
+  
+    {% elif ask=="colab" %}
+    <center><h2 style="color: rgb(8, 8, 8); font-weight: bold; font-size: 40px;"> Collaborative Filtering Would be Added Soon </h2></center>
+    {% elif ask=="fail" %}
+    <center><h2 style="color: rgb(8, 8, 8); font-weight: bold; font-size: 40px;"> The Movie doesn't exist in my database </h2></center>
+    {% endif %}
+  {% endblock %}
 
 
 	<div class="results">
