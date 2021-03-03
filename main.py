@@ -16,7 +16,7 @@ def recieve():
             try:
                 obj=model.get_rec(req['movie'])
                 strings=[]
-                for i,j in obj.items():
+                for j in obj.items():
                     strings.append(j)
                 return render_template("home.html",movie=req['movie'],r=strings,ask="success")
             except:

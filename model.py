@@ -4,12 +4,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-indices=pickle.load(open("indices.pickle",'rb'))
-
-cosine_sim=pickle.load(open("cosine_sim.pickle",'rb'))
-
-
-movies=pickle.load(open("movies.pickle",'rb'))
+indices=pickle.load(open('indices.pickle','rb'))
+cosine_sim=pickle.load(open('cosine_sim.pickle','rb'))
+movies=pickle.load(open('movies.pickle','rb'))
 
 def get_rec(title,cosine_sim=cosine_sim):
     #get the index
@@ -23,7 +20,7 @@ def get_rec(title,cosine_sim=cosine_sim):
     #get indices
     movie_indices=[i[0] for i in similar_scores]
     #return top 10 movies to the function 
-    return movies['title_x'].iloc[movie_indices]
+    return indices.index[movie_indices]
 
 def get_similar_movie(query):
     title_movie=movies['original_title']
