@@ -23,7 +23,7 @@ def recieve():
                 index=model.get_similar_movie(req['movie'])
                 obj=model.get_rec(index[0])
                 strings=[]
-                for i,j in obj.items():
+                for j in obj:
                     strings.append(j)
                 return render_template("home.html",movie=index[0],r=strings,ask="success")
         if(req['filter']=='Collaborative Based'):

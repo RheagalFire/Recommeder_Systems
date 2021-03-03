@@ -2,10 +2,10 @@
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
-
+import gzip
 
 indices=pickle.load(open('indices.pickle','rb'))
-cosine_sim=pickle.load(open('cosine_sim.pickle','rb'))
+cosine_sim=pickle.load(gzip.open('cosine_sim.pickle','rb'))
 movies=pickle.load(open('movies.pickle','rb'))
 
 def get_rec(title,cosine_sim=cosine_sim):
