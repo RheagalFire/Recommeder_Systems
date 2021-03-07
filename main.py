@@ -28,7 +28,7 @@ def recieve():
                 query=index[0]
                 obj=engine.execute("SELECT * FROM movies_2 WHERE Index='{0}'".format(query)).fetchall()
                 strings=[]
-                for j in obj[0]:
+                for j in obj[0][1:]:
                     strings.append(j)
                 return render_template("home.html",movie=index[0],r=strings,ask="success")
         if(req['filter']=='Collaborative Based'):
