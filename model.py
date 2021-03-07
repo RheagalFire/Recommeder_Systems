@@ -47,8 +47,10 @@ def get_similar_movie(query):
 
 if __name__=="__main__":
     index=get_similar_movie('Harry Potter')
+    print(str(index[0]))
     print(get_rec(index[0]))
-    print(get_rec("Batman"))
+    #print(get_rec("Batman"))
+    print(get_rec('Avatar'))
 
 
 
