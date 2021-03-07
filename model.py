@@ -2,25 +2,11 @@
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
-import gzip
+#import gzip
 
 indices=pickle.load(open('indices.pickle','rb'))
-cosine_sim=pickle.load(gzip.open('cosine_sim.pickle','rb'))
+#cosine_sim=pickle.load(gzip.open('cosine_sim.pickle','rb'))
 movies=pickle.load(open('movies.pickle','rb'))
-
-def get_rec(title,cosine_sim=cosine_sim):
-    #get the index
-    idx=indices[title]
-    # Get the pairwsie similarity scores of all movies with that movie
-    similar_scores = list(enumerate(cosine_sim[idx]))
-    #sort the movies based on sim_scores
-    similar_scores=sorted(similar_scores,key=lambda x:x[1],reverse=True)
-    #get the top 10 recommendations
-    similar_scores=similar_scores[1:11]
-    #get indices
-    movie_indices=[i[0] for i in similar_scores]
-    #return top 10 movies to the function 
-    return indices.index[movie_indices]
 
 def get_similar_movie(query):
     title_movie=movies['original_title']
