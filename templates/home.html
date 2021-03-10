@@ -71,7 +71,17 @@
        <center> <li style="color:rgb(0, 0, 0) ;padding-bottom:10px ; font-size: 30px;font-family: 'Dancing Script', cursive;"> <strong> {{m}} </strong> </li> </center>
       {% endfor %}
     </ul>
-  
+  {% elif ask=="success_2" %}
+  <div class="display_R">
+    <center><h2 style="color:#062200 ; font-weight: bold;">Did You Mean<h1 style="color:rgb(241, 241, 241);font-family: 'Dancing Script', cursive;font-size: 40px;">{{movie}}</h1></h2></center>
+  </div>
+
+    <ul>
+      {% for m in r %}
+       <center> <li style="color:rgb(0, 0, 0) ;padding-bottom:10px ; font-size: 30px;font-family: 'Dancing Script', cursive;"> <strong> {{m}} </strong> </li> </center>
+      {% endfor %}
+    </ul>
+
     {% elif ask=="colab" %}
     <center><h2 style="color: rgb(8, 8, 8); font-weight: bold; font-size: 40px;"> Collaborative Filtering Would be Added Soon </h2></center>
     {% elif ask=="fail" %}

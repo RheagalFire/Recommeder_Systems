@@ -1,7 +1,14 @@
 from flask import Flask,request,jsonify,render_template
 import model
+import os
 from sqlalchemy import create_engine
-engine = create_engine("postgres://ikmjthcnmtxame:08fdd878f97d221cf8b1d42d43d7ac175ced90898127b17a56c4a6dc5373e96b@ec2-54-90-13-87.compute-1.amazonaws.com:5432/dfqcdcdi9h7oi1")
+try:
+    DB_KEY=os.environ["DATABASE_URL"]
+except:
+    from dotenv import load_dotenv
+    load_dotenv()
+    DB_KEY=os.getenv("DATABASE_URL")
+engine = create_engine(DB_KEY)
 app=Flask(__name__)
 
 @app.route('/')
@@ -30,7 +37,7 @@ def recieve():
                 strings=[]
                 for j in obj[0][1:]:
                     strings.append(j)
-                return render_template("home.html",movie=index[0],r=strings,ask="success")
+                return render_template("home.html",movie=index[0],r=strings,ask="success_2")
         if(req['filter']=='Collaborative Based'):
             return render_template("home.html",ask="colab")
 
