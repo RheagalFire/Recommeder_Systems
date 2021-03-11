@@ -7,7 +7,7 @@ Website for recommendation system using content based and collaborative based fi
 - TF-IDF
 - cosine-similarity
 
-### To run on your local server
+## To run on your local server
 
 1. Fork The repo 
 2. Clone the repo to your device 
@@ -16,6 +16,6 @@ Website for recommendation system using content based and collaborative based fi
 5. Run `pip install requirements.txt` on terminal
 6. Run the server
 
-### Logic Behind Algorithm 
+## Logic Behind Algorithm 
 
 Visit this [repo](https://github.com/RheagalFire/Content_Based_Filtering)
